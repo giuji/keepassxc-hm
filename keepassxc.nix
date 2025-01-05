@@ -16,7 +16,7 @@ in {
       type = types.package;
       default = pkgs.keepassxc;
       defaultText = literalExpression "pkgs.keepassxc";
-      description = "The KeePassXC pacakge to install"
+      description = "The KeePassXC pacakge to install";
     };
 
 
