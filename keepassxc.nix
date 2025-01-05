@@ -28,6 +28,7 @@ in {
       description = ''
         Configuration written to file
         {file} `$XDG_CONFIG_HOME/keepassxc/keepassxc.ini`.
+        If set, KeePassXC will complain about writing permission on start.
       '';
       example = literalExpression ''
         {
