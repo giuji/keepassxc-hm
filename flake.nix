@@ -3,7 +3,7 @@
   description = "home-manager module for KeePassXC";
   
   inputs = {
-    nixpks.url = "github:NixOS/nixpkgs/nixos-24.11";
+    nixpks.url = "github:NixOS/nixpkgs/nixos-unstale";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
