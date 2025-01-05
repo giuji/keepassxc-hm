@@ -9,7 +9,7 @@ let
 
 in {
 
-  options.keepassxc.foot = {
+  options.programs.keepassxc = {
     enable = mkEnableOption "KeePassXC Password Manager";
 
     package = mkOption {
@@ -22,7 +22,7 @@ in {
 
     # It's fine to store ur keepassxc.ini publicly, see
     # https://github.com/keepassxreboot/keepassxc/discussions/10055
-    settings = mkOptions {
+    settings = mkOption {
       type = iniFormat.type;
       default = { };
       description = ''
@@ -45,13 +45,13 @@ in {
 
   config = mkIf cfg.enable {
     assertions =
-      [ (hm.assertions.assertPlatform "programs.foot" pkgs platforms.linux) ];
+      [ (hm.assertions.assertPlatform "programs.keepassxc" pkgs platforms.linux) ];
+
+    home.packages = [ cfg.package ];
 
     xdg.configFile."keepassxc/keepassxc.ini" = mkIf (cfg.settings != { }) {
       source = iniFormat.generate "keepassxc.ini" cfg.settings;
     };
-    
-    home.packages = [ cfg.package ];
   };
   
 }
