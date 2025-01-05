@@ -1,3 +1,9 @@
+# README: KeePassXC does not mantain a manual of its configuration file
+# options, users should change settings only thru the gui. Also
+# KeePassXC expects write permissions on the config file, it's still
+# going to work with a ro config file, but warning messages are going to
+# pop up on the gui.
+
 { config, lib, pkgs, ... }:
 
 with lib;
